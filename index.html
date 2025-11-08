@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Anniversary 💕</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(to bottom, #f6c37f, #f29782, #875f9a);
+      background-size: cover;
+      background-attachment: fixed;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+      transition: background 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      width: 250px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      font-size: 1em;
+      background-color: #3cb371;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #2e8b57;
+    }
+
+    #message-box {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      white-space: pre-wrap;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #password-section {
+      transition: opacity 0.6s ease;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enter Password</h1>
+  <div id="password-section">
+    <input type="password" id="passwordInput" placeholder="••••••••••">
+    <br>
+    <button onclick="checkPassword()">Unlock</button>
+  </div>
+
+  <div id="message-box">
+    <p><strong>Happy Anniversary ke-12 November 💗</strong></p>
+    <p>Hi Abi,<br>
+    Terima kasih sudah hadir dalam hidupku,<br>
+    jadi tempat cerita, jadi partner bercanda,<br>
+    dan jadi orang yang selalu bikin aku senyum tiap hari.<br><br>
+
+    Kamu itu seperti kode yang sempurna:<br>
+    kadang bikin aku bingung,<br>
+    kadang bikin aku mau debug seharian,<br>
+    tapi tetap selalu aku pilih, selalu aku sayang. 😍💞<br><br>
+
+    Semoga hubungan kita terus jalan tanpa error,<br>
+    tanpa bug besar,<br>
+    dan kalau pun ada,<br>
+    kita selalu bisa "fix" bareng-bareng. 💖<br><br>
+
+    Terima kasih sudah jadi rumah yang nyaman,<br>
+    tempat aku pulang dengan hati tenang.<br><br>
+
+    I love you, Abi. 💘</p>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/10/16/audio_7b3c8d76c2.mp3?filename=sunset-lofi-ambient-121353.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("passwordInput").value;
+      if (password === "iloveyou12") {
+        document.getElementById("password-section").style.opacity = "0";
+        setTimeout(() => {
+          document.getElementById("password-section").style.display = "none";
+          document.getElementById("message-box").style.display = "block";
+          const music = document.getElementById("bg-music");
+          music.volume = 0.3;
+          music.play();
+        }, 600);
+      } else {
+        alert("Password salah 😅");
+      }
+    }
+  </script>
+</body>
+</html>
+
 
