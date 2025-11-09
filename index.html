@@ -16,23 +16,34 @@
     width: 100%;
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
+    position: relative;
   }
 
+  /* BACKGROUND IMAGE */
+  #bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    object-position: center;
+    z-index: -1;
+    background-color: black;
+  }
+
+  /* LAYOUT TENGAH */
   body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background: url("https://raw.githubusercontent.com/anitagallery1112-design/anniversary/main/foto2.png")
-                no-repeat center center fixed;
-    background-size: cover; /* full layar, proporsional */
-    background-color: black;
-    color: white;
     text-align: center;
+    color: white;
+    flex-direction: column;
   }
 
+  /* PASSWORD BOX */
   #password-container {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.65);
     padding: 35px 45px;
     border-radius: 15px;
     box-shadow: 0 4px 25px rgba(0,0,0,0.5);
@@ -45,7 +56,8 @@
     color: #ffe6e6;
   }
 
-  input[type="password"] {
+  input[type="password"] {::placeholder {
+   color: rgba(255, 255, 255, 0.4);
     padding: 12px;
     font-size: 18px;
     border-radius: 8px;
@@ -62,7 +74,7 @@
     border: none;
     border-radius: 8px;
     background-color: #ff6b81;
-    color: black;
+    color: white;
     cursor: pointer;
     transition: 0.3s;
   }
@@ -71,9 +83,10 @@
     background-color: #ff4757;
   }
 
+  /* PESAN */
   #message-box {
     display: none;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.65);
     padding: 30px;
     border-radius: 15px;
     width: 85%;
@@ -106,18 +119,11 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Responsive untuk HP */
+  /* RESPONSIVE HP */
   @media (max-width: 600px) {
-    body {
-      background-position: center center;
-      background-attachment: scroll;
-    }
-    h1 {
-      font-size: 22px;
-    }
-    input[type="password"] {
-      width: 80%;
-    }
+    h1 { font-size: 22px; }
+    input[type="password"] { width: 80%; }
+    #password-container { padding: 25px 30px; }
     #message-box {
       padding: 20px;
       font-size: 16px;
@@ -128,6 +134,11 @@
 </style>
 </head>
 <body>
+
+  <!-- BACKGROUND -->
+  <img id="bg" src="https://raw.githubusercontent.com/anitagallery1112-design/anniversary/main/Hilly%20Natural%20Mountains%20Aesthetics%20Mood%20Photo%20Collage.png" alt="Background">
+
+  <!-- PASSWORD PAGE -->
   <div id="password-container">
     <h1>Enter Password 💌</h1>
     <input type="password" id="passwordInput" placeholder="********">
@@ -135,6 +146,7 @@
     <button onclick="checkPassword()">Unlock</button>
   </div>
 
+  <!-- MESSAGE -->
   <div id="message-box">
     <h3>Selamat Tanggal 12 yang ke 9 tahun 💕</h3>
     <p>
@@ -174,6 +186,7 @@ I love you, Abi.
       if (input === "muahkangen") {
         document.getElementById("password-container").style.display = "none";
         document.getElementById("message-box").style.display = "block";
+        document.body.style.overflow = "hidden"; 
       } else {
         alert("Password salah, coba lagi ya ❤️");
       }
