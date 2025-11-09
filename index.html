@@ -23,7 +23,7 @@
     justify-content: center;
     align-items: center;
     background: url("https://raw.githubusercontent.com/anitagallery1112-design/anniversary/main/Hilly%20Natural%20Mountains%20Aesthetics%20Mood%20Photo%20Collage.png")
-                no-repeat center 45% fixed;
+                no-repeat center center fixed;
     background-size: cover;
     background-color: black;  
     color: white;
@@ -31,10 +31,11 @@
   }
 
   #password-container {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 30px 40px;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 35px 45px;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+    animation: fadeIn 1.2s ease;
   }
 
   h1 {
@@ -71,23 +72,40 @@
 
   #message-box {
     display: none;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.65);
     padding: 30px;
     border-radius: 15px;
-    max-width: 600px;
+    width: 85%;
+    max-width: 650px;
+    max-height: 80vh;
+    overflow-y: auto;
     text-align: left;
     white-space: pre-line;
     color: white;
-    overflow-y: hidden; 
-    max-height: 90vh;
+    animation: fadeIn 1.5s ease;
+  }
+
+  #message-box::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  #message-box::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.4);
+    border-radius: 4px;
   }
 
   #message-box h3 {
     color: #ffb6c1;
     text-align: center;
+    margin-bottom: 15px;
   }
 
-  /* Responsive HP */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive untuk HP */
   @media (max-width: 600px) {
     h1 {
       font-size: 22px;
@@ -98,6 +116,8 @@
     #message-box {
       padding: 20px;
       font-size: 16px;
+      width: 90%;
+      max-height: 85vh;
     }
   }
 </style>
@@ -116,24 +136,25 @@
 Hi Abi,  
 Terima kasih sudah hadir dalam hidupku,  
 jadi tempat cerita, jadi partner bercanda,  
-dan jadi orang yang selalu bikin aku senyum tiap hari.
-Terima kasih untuk selalu menjadi tempat aman dan nyaman untukku
-Aku seneng banget kamu menjadi warna dalam hidupku, dimana 
-kamu selalu mengajak aku ke dunia mu dan kemana pun kamu pergi
-kamu pasti selalu inget dan mengajak aku, makasi yah 
-Positif dalam dirimu semoga gak pernah pudar untukku 
-agar aku yang negatif ini bisa menjadi orang yang selalu positif
-seperti kamu yah bi.
+dan jadi orang yang selalu bikin aku senyum tiap hari.  
+Terima kasih untuk selalu menjadi tempat aman dan nyaman untukku.  
+Aku seneng banget kamu menjadi warna dalam hidupku,  
+dimana kamu selalu mengajak aku ke dunia mu dan kemana pun kamu pergi  
+kamu pasti selalu inget dan mengajak aku, makasi yah.  
+
+Positif dalam dirimu semoga gak pernah pudar untukku,  
+agar aku yang negatif ini bisa menjadi orang yang selalu positif  
+seperti kamu yah bi.  
 
 Kamu itu seperti kode yang sempurna:  
 kadang bikin aku bingung,  
 kadang bikin aku mau debug seharian,  
-tapi tetap selalu aku pilih, selalu aku sayang. 😍💗
+tapi tetap selalu aku pilih, selalu aku sayang. 😍💗  
 
 Semoga hubungan kita terus jalan tanpa error,  
 tanpa bug besar,  
 dan kalau pun ada,  
-kita selalu bisa "fix" bareng-bareng. 💕
+kita selalu bisa "fix" bareng-bareng. 💕  
 
 Terima kasih sudah jadi rumah yang nyaman,  
 tempat aku pulang dengan hati tenang.  
@@ -148,7 +169,6 @@ I love you, Abi.
       if (input === "muahkangen") {
         document.getElementById("password-container").style.display = "none";
         document.getElementById("message-box").style.display = "block";
-        document.body.style.overflow = "hidden"; 
       } else {
         alert("Password salah, coba lagi ya ❤️");
       }
@@ -156,5 +176,3 @@ I love you, Abi.
   </script>
 </body>
 </html>
-
-
