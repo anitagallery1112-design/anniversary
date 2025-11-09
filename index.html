@@ -15,7 +15,7 @@
     height: 100%;
     width: 100%;
     font-family: 'Poppins', sans-serif;
-    overflow: auto; 
+    overflow: hidden;
   }
 
   body {
@@ -24,12 +24,11 @@
     align-items: center;
     flex-direction: column;
     background: url("https://raw.githubusercontent.com/anitagallery1112-design/anniversary/main/Hilly%20Natural%20Mountains%20Aesthetics%20Mood%20Photo%20Collage.png")
-                no-repeat center top;
-    background-size: contain; 
+                no-repeat center center fixed;
+    background-size: cover; 
     background-color: black;
     color: white;
     text-align: center;
-    min-height: 100vh;
   }
 
   #password-container {
@@ -38,7 +37,6 @@
     border-radius: 15px;
     box-shadow: 0 4px 25px rgba(0,0,0,0.5);
     animation: fadeIn 1.2s ease;
-    margin-top: 10vh;
   }
 
   h1 {
@@ -86,7 +84,6 @@
     white-space: pre-line;
     color: white;
     animation: fadeIn 1.5s ease;
-    margin: 40px auto;
   }
 
   #message-box::-webkit-scrollbar {
@@ -111,6 +108,10 @@
 
   /* Responsive untuk HP */
   @media (max-width: 600px) {
+    body {
+      background-position: center center;
+      background-attachment: scroll;
+    }
     h1 {
       font-size: 22px;
     }
@@ -173,7 +174,6 @@ I love you, Abi.
       if (input === "muahkangen") {
         document.getElementById("password-container").style.display = "none";
         document.getElementById("message-box").style.display = "block";
-        window.scrollTo(0, 0); // biar langsung ke atas saat pesan muncul
       } else {
         alert("Password salah, coba lagi ya ❤️");
       }
