@@ -97,3 +97,72 @@
     max-width: 90%;
     max-height: 90vh;
     animation: fadeIn 1s ease;
+  }
+
+  #message-box h3 {
+    color: #ffd1dc;
+    margin-bottom: 20px;
+  }
+
+  #message-box p {
+    text-align: left;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* ANIMASI */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+  <img id="bg" src="https://raw.githubusercontent.com/anitagallery1112-design/anniversary/main/Hilly%20Natural%20Mountains%20Aesthetics%20Mood%20Photo%20Collage.png" alt="background">
+
+  <div id="password-container">
+    <h1>Enter Password</h1>
+    <input type="password" id="passwordInput" placeholder="********">
+    <br>
+    <button onclick="checkPassword()">Unlock</button>
+  </div>
+
+  <div id="message-box">
+    <h3>Happy Anniversary ke-12 November 💕</h3>
+    <p>
+Hi Abi,  
+Terima kasih sudah hadir dalam hidupku,  
+jadi tempat cerita, jadi partner bercanda,  
+dan jadi orang yang selalu bikin aku senyum tiap hari.
+
+Kamu itu seperti kode yang sempurna:  
+kadang bikin aku bingung,  
+kadang bikin aku mau debug seharian,  
+tapi tetap selalu aku pilih, selalu aku sayang. 😍💗
+
+Semoga hubungan kita terus jalan tanpa error,  
+tanpa bug besar,  
+dan kalau pun ada,  
+kita selalu bisa "fix" bareng-bareng. 💕
+
+Terima kasih sudah jadi rumah yang nyaman,  
+tempat aku pulang dengan hati tenang.  
+
+I love you, Abi.
+    </p>
+  </div>
+
+<script>
+  function checkPassword() {
+    const input = document.getElementById("passwordInput").value;
+    if (input === "iloveyou12") {
+      document.body.style.overflow = "hidden"; // hilangkan scroll
+      document.getElementById("password-container").style.display = "none";
+      document.getElementById("message-box").style.display = "block";
+    } else {
+      alert("Password salah, coba lagi ya ❤️");
+    }
+  }
+</script>
+</body>
+</html>
