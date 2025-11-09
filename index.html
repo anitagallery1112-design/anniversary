@@ -24,13 +24,14 @@
     align-items: center;
     background: url("https://raw.githubusercontent.com/anitagallery1112-design/anniversary/main/Hilly%20Natural%20Mountains%20Aesthetics%20Mood%20Photo%20Collage.png")
                 no-repeat center center fixed;
-    background-size: cover;
+    background-size: contain;
+    background-color: black;  
     color: white;
     text-align: center;
   }
 
   #password-container {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     padding: 30px 40px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -76,8 +77,9 @@
     max-width: 600px;
     text-align: left;
     white-space: pre-line;
-    overflow-y: auto;
-    max-height: 90vh; 
+    color: white;
+    overflow-y: hidden; 
+    max-height: 90vh;
   }
 
   #message-box h3 {
@@ -136,9 +138,10 @@ I love you, Abi.
   <script>
     function checkPassword() {
       const input = document.getElementById("passwordInput").value;
-      if (input === "iloveyou12") {
+      if (input === "muahkangen") {
         document.getElementById("password-container").style.display = "none";
         document.getElementById("message-box").style.display = "block";
+        document.body.style.overflow = "hidden"; 
       } else {
         alert("Password salah, coba lagi ya ❤️");
       }
@@ -146,4 +149,3 @@ I love you, Abi.
   </script>
 </body>
 </html>
-
