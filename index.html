@@ -25,7 +25,7 @@
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain; 
+    object-fit: cover; /* agar full tanpa terpotong */
     object-position: center;
     z-index: -1;
     background-color: black;
@@ -56,8 +56,7 @@
     color: #ffe6e6;
   }
 
-  input[type="password"] {::placeholder {
-   color: rgba(255, 255, 255, 0.4);
+  input[type="password"] {
     padding: 12px;
     font-size: 18px;
     border-radius: 8px;
@@ -65,132 +64,4 @@
     outline: none;
     width: 250px;
     text-align: center;
-  }
-
-  button {
-    margin-top: 20px;
-    padding: 10px 25px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    background-color: #ff6b81;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  button:hover {
-    background-color: #ff4757;
-  }
-
-  /* PESAN */
-  #message-box {
-    display: none;
-    background: rgba(0,0,0,0.65);
-    padding: 30px;
-    border-radius: 15px;
-    width: 85%;
-    max-width: 650px;
-    max-height: 80vh;
-    overflow-y: auto;
-    text-align: left;
-    white-space: pre-line;
-    color: white;
-    animation: fadeIn 1.5s ease;
-  }
-
-  #message-box::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  #message-box::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.4);
-    border-radius: 4px;
-  }
-
-  #message-box h3 {
-    color: #ffb6c1;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* RESPONSIVE HP */
-  @media (max-width: 600px) {
-    h1 { font-size: 22px; }
-    input[type="password"] { width: 80%; }
-    #password-container { padding: 25px 30px; }
-    #message-box {
-      padding: 20px;
-      font-size: 16px;
-      width: 90%;
-      max-height: 85vh;
-    }
-  }
-</style>
-</head>
-<body>
-
-  <!-- BACKGROUND -->
-  <img id="bg" src="https://raw.githubusercontent.com/anitagallery1112-design/anniversary/main/Hilly%20Natural%20Mountains%20Aesthetics%20Mood%20Photo%20Collage.png" alt="Background">
-
-  <!-- PASSWORD PAGE -->
-  <div id="password-container">
-    <h1>Enter Password 💌</h1>
-    <input type="password" id="passwordInput" placeholder="********">
-    <br>
-    <button onclick="checkPassword()">Unlock</button>
-  </div>
-
-  <!-- MESSAGE -->
-  <div id="message-box">
-    <h3>Selamat Tanggal 12 yang ke 9 tahun 💕</h3>
-    <p>
-Hi Abi,  
-Terima kasih sudah hadir dalam hidupku,  
-jadi tempat cerita, jadi partner bercanda,  
-dan jadi orang yang selalu bikin aku senyum tiap hari.  
-Terima kasih untuk selalu menjadi tempat aman dan nyaman untukku.  
-Aku seneng banget kamu menjadi warna dalam hidupku,  
-dimana kamu selalu mengajak aku ke dunia mu dan kemana pun kamu pergi  
-kamu pasti selalu inget dan mengajak aku, makasi yah.  
-
-Positif dalam dirimu semoga gak pernah pudar untukku,  
-agar aku yang negatif ini bisa menjadi orang yang selalu positif  
-seperti kamu yah bi.  
-
-Kamu itu seperti kode yang sempurna:  
-kadang bikin aku bingung,  
-kadang bikin aku mau debug seharian,  
-tapi tetap selalu aku pilih, selalu aku sayang. 😍💗  
-
-Semoga hubungan kita terus jalan tanpa error,  
-tanpa bug besar,  
-dan kalau pun ada,  
-kita selalu bisa "fix" bareng-bareng. 💕  
-
-Terima kasih sudah jadi rumah yang nyaman,  
-tempat aku pulang dengan hati tenang.  
-
-I love you, Abi.
-    </p>
-  </div>
-
-  <script>
-    function checkPassword() {
-      const input = document.getElementById("passwordInput").value;
-      if (input === "muahkangen") {
-        document.getElementById("password-container").style.display = "none";
-        document.getElementById("message-box").style.display = "block";
-        document.body.style.overflow = "hidden"; 
-      } else {
-        alert("Password salah, coba lagi ya ❤️");
-      }
-    }
-  </script>
-</body>
-</html>
+    background-color: rgba(255,255,255,0.1);
